@@ -1,0 +1,100 @@
+%!TEX program = xelatex
+% XeLaTex
+% document type
+\documentclass{ctexart}
+
+% preamble
+% - packages
+\usepackage{array, titlesec, calc, fancyhdr}
+\usepackage[margin=3cm]{geometry}
+\usepackage[colorlinks=true, urlcolor=blue]{hyperref}
+
+% - commands
+
+\newcolumntype{L}{>{\raggedleft\arraybackslash}p{2cm}}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}p{3.5cm}}
+\newcommand{\parlength}{\textwidth-2.5cm}
+
+\fancypagestyle{onestyle}
+{
+    \fancyhead{}
+    \fancyfoot[CO]{\thepage}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+}
+
+\titleformat
+    {\section}
+    {\normalfont\LARGE\bfseries}
+    {\thesection}
+    {1em}
+    {}
+    [{\titlerule[0.7pt]}]
+
+\pagestyle{onestyle}
+
+% - title
+\author{}
+\title{\vspace{-1cm}曹建明}
+\date{}
+
+% document
+\begin{document}
+% \maketitle
+
+
+% - personal info
+\section*{个人信息}
+
+\noindent\begin{tabular}{rl}
+姓名: & 曹建明\\
+手机: & +8615505139159\\
+出生年月：& 1987/02\\
+教育背景：& 统招本科，南京工业大学\\
+邮箱: & \href{mailto:glide.ming@gmail.com}{glide.ming@gmail.com}
+\end{tabular}
+
+% - Skill
+\section*{职业能力}
+
+\begin{itemize}
+\item 6年大数据开发经验，3年数据小团队管理经验，拥有丰富的数据开发及治理经验；4年软件测试经验，善于工程质量保障。
+\item 熟悉主流大数据生态组件及原理，如Hadoop、Hive、Spark、Flink、ClickHouse、Druid、ZooKeeper、Kafka、Redis/Codis、MySQL、数据湖	等。
+\item 拥有较强的编码能力及自驱学习能力，熟练使用Java/Scala/Python/Go，二次开发过Superset、Druid、chpxory，阅读过Spark、Hadoop、Kafka部分源码，了解常见的分布式协议如Raft算法、Quorum NWR算法、ZAB协议等，熟悉hashicorp/raft源码及其基本使用。
+\item 优秀的理解沟通能力，能快速理解业务背景，对数据敏感。
+\end{itemize}
+
+% - work experience
+\section*{工作经验}
+
+\noindent\begin{tabular}{L|l}
+2014.10. -- 今 & 
+\parbox
+    {\parlength}
+    {
+        {\bf 上海触宝科技，增长技术专家} \\
+        曾负责国内业务数据的治理工作，从无到有搭建了国内业务数据团队；后负责增长核心服务及数据建设，在增长领域进行了深度实践。
+        \begin{itemize}
+            \item 在触宝电话Android架构组工作了近半年时间，主要产出为：1）主导了Android客户端的后台耗电优化工作。在此过程中基于AlarmManager实现了后台任务调度框架建设，形成一个统一管理的，支持灵活策略（如充电检测和WiFi检测运行）的任务调度框架；2）独立重构了Android客户端的双卡识别引擎，期间调研了超过20个不同品牌上百种机型，建立并开发了数据驱动的自动识别模型及云数据同步服务，该模型能够自动识别市面上超过10000种不同厂商与型号的机型，在当时做到了业内领先。
+            \item 负责国内业务数据治理工作，主要产出为：1）从零开始搭建了数据处理技术链路，包括MR、Pig、Spark、Sqoop、Azkaban等技术组件调研与推广，编写了大量的数据处理框架性质的代码，对Azkaban进行扩展以支持微信、电话等报警能力，大大提升团队的开发效率。2）和业务部分紧密沟通，支持了大量业务数据报表的开发需求，探索基于Caravel（现为Apache Superset）+Druid的可视化方案，参与了部分Caravel的二次开发工作。3）数据治理与数仓建设，对数据打点能力做了进一步地封装，同时组织了多次数据打点规范的分享，优化了客户端的数据打点，有效提升了数据处理效率；使用Kimball维度建模思想对业务数据进行全面梳理，基于Apache Drill构建业务数仓，进一步规范了数据处理标准，同时也大大提升了数据分析同学的效率，对于业务的决策起到重要的辅助作用。
+            \item 18年底，在国内业务疲软之际，开始接触增长相关的工作，负责国内增长的核心技术体系搭建，主要产出为：1）作为归因服务负责人，和投放同学及各媒体紧密沟通，持续产出优化方案对归因服务进行迭代演进；目前已经接入了超过10家媒体，同时基于对投放的认知，成功挖掘出了多个实时归因策略，有效优化了投放效果。2）围绕投放增长的模式，构建以刻画用户粒度的来源、获客成本、留存、运营成本、收入贡献等生命周期（LTV/ROI）核心数据，极大地提升了业务决策能效。3）接手RTA服务，对服务进行了技术优化与功能升级，实现了并行实验能力、数据标准化、实验配置web化等重大改进，形成了RTA策略的制定-测试-分析-监控的闭环，大大提升了RTA服务的业务贡献；主导RTA策略的挖掘工作，成功挖掘出多个策略并运用在多个产品的投放上，整体投放效果提升明显。
+        \end{itemize}
+
+    }
+\end{tabular}\\\\
+
+\noindent\begin{tabular}{L|l}
+2010.7. -- 2014.9. & 
+\parbox
+    {\parlength}
+    {
+        {\bf 资深软件测试工程师} \\
+        在NCS, IBM从事软件测试工作，拥有丰富的软件测试经验。在NCS期间曾两次获得客户颁发优质贡献证书。
+        \begin{itemize}
+        \item 参与或主导测试项目，涉及测试规划，测试设计，测试执行，确保测试项目的质量周期完善可控。
+        \item 拥有丰富的自动化与性能测试经验，参与过自动化测试框架的设计与编写，拥有良好的编码能力和技术调研能力，通过为客户提供高度针对性的方案与演示，多次帮助公司与客户达成深度合作。
+        \end{itemize}
+    }
+\end{tabular}\\\\
+
+\end{document}
